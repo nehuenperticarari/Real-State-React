@@ -1,0 +1,59 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    background-color: white;
+    padding: 1rem;
+    -webkit-box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    border-radius: 0.75rem;
+
+
+    @include m.tablet {
+        max-width: 50%;
+     }
+    &__title{
+        @include m.heading;
+        margin-bottom: 5rem;
+    }
+    &__label{
+        font-size: 2rem;
+        display: block;
+    }
+    &__entries{
+        margin-bottom: 2rem;
+    }
+    &__input{
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-bottom: #e1e1e1 1px solid
+    }
+    &__textarea{
+        padding: 1rem;
+        width: 100%;
+        border: none;
+        border-bottom: #e1e1e1 1px solid
+    }
+    &__btn{
+        margin-top: 5rem;
+        @include m.btn(v.$primary, v.$white);
+        text-align: center;
+
+
+    }
+    &__contact{
+        text-align: center;
+        font-size: 2rem;
+
+        &--bold{
+            font-weight: bold;
+        }
+    }
+}

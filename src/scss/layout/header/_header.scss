@@ -1,0 +1,105 @@
+@use '../../base/mixins' as m;
+@use '../../base/variables' as v;
+
+.header{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 3rem 0 5rem 0;
+    position: relative;
+
+    @include m.tablet {
+        padding: 3rem 0 15rem 0;
+    }
+    @include m.desktopxl {
+        padding: 3rem 0 17rem 0;
+
+    }
+
+    &__bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem; //ver
+
+        @include m.tablet {
+            margin-bottom: 0rem; 
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo{
+        transition: 0.3s;
+        &:hover{
+            opacity: .5;
+        }
+    }
+
+    &__content{
+        @include m.tablet {
+            margin-top: 10rem;
+            max-width: 50rem;
+        }
+    }
+
+    &__title{
+        color: v.$white;
+        text-align: center;
+        font-size: 4.3rem;
+        @include m.tablet {
+            text-align: left;
+        }
+    }
+
+    &__img{
+        display: none;
+/*         @include m.tablet {
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -3rem;
+            max-width: 35rem;
+            border-top-left-radius: 5rem;
+            border-bottom-left-radius: 5rem;
+            opacity: 0.8;
+        }
+        @include m.desktopxl {
+            max-width: 60rem;
+        } */
+    }
+    &__text{
+        display: none;
+        color: v.$white;
+        @include m.tablet {
+            display: block;
+        }
+    }
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 3rem; //ver
+    @include m.tablet {
+        margin-top: 0;
+        flex-direction: row;
+    }
+    &__link{
+        color: v.$white;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 1.8rem;
+        @include m.tablet {
+            font-size: 1.6rem;
+        }
+
+        &:hover{
+            transition: .3s;
+            opacity: .5;
+        }
+
+    }
+}

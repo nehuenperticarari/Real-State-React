@@ -1,0 +1,13 @@
+.alert{
+    padding: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    &__error{
+        background-color: rgb(206, 71, 71);
+    }
+    &__successful{
+        background-color: rgb(14, 170, 6);
+    }
+}

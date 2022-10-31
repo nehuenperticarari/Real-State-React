@@ -1,0 +1,59 @@
+@use '../../base/mixins' as m;
+@use '../../base/variables' as v;
+
+.back{
+    padding: 2rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    transition: .3s;
+    &:hover{
+        opacity: .5;
+    }
+}
+.item{
+    margin-top: 5rem;
+    background-color: white;
+    padding: 2rem;
+    -webkit-box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    border-radius: 0.5rem;
+
+    &__title{
+        @include m.heading
+    }
+
+    &__social{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 3px #e1e1e1;
+        @include m.tablet{
+        justify-content: center;
+        gap: 5rem;
+            
+        }
+    }
+    &__link{
+        width: 6rem;
+        height: 6rem;
+        transition: .3s;
+        &:hover{
+            opacity: .6;
+        }
+    }
+    &__description{
+        text-align: center;
+    }
+    &__price{
+        color: v.$primary;
+        font-size: x-large;
+        font-weight: bold;
+        text-align: center;
+    }
+    &__btn{
+        margin: 0 auto;
+        max-width: 30rem;
+        @include m.btn(v.$primary, white ) ;
+    }
+  
+}

@@ -1,0 +1,68 @@
+@use '../../base/mixins' as m;
+@use '../../base/variables' as v;
+
+.estates{
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+
+
+    @include m.tablet {
+    margin-top: 10rem;
+    }
+
+    &__title{
+        @include m.heading;
+    }
+
+    &__grid{
+        @include m.grid(1, 2rem ) ;
+        @include m.tablet {
+            @include m.grid(3, 2rem ) ;
+        }
+    }
+}
+
+.estate{
+    background-color: v.$white;
+    -webkit-box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    border-radius: 0.5rem;
+
+    &__img{
+        aspect-ratio: 10/6;
+        background-size: cover;
+        position: relative;
+        border-radius: 0.5rem;
+    }
+    &__name{
+        position: absolute;
+        color: v.$white;
+        bottom: -25px;
+        font-size: 2.5rem;
+    }
+
+    &__content{
+        padding: 2rem;
+    }
+    &__text{
+        text-align: left;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+    &__price{
+        font-weight: bold;
+        font-size: 3rem;
+        margin: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    &__link{
+        @include m.btn(v.$primary, v.$white ) ;
+        display: block;
+        text-transform: uppercase;
+        
+    }
+}

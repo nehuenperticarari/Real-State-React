@@ -1,0 +1,119 @@
+@use 'variables' as v;
+
+@mixin phone {
+    @media (min-width: v.$phone){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop){
+        @content;
+    }
+}
+
+@mixin desktopxl {
+    @media (min-width: v.$desktopxl){
+        @content;
+    }
+}
+
+@mixin grid($column, $gap) {
+    display: grid;
+    grid-template-columns: repeat($column, 1fr);
+    gap: $gap;
+}
+
+@mixin btn($color, $text) {
+    background-color: $color;
+    font-size: 2rem;
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: $text;
+    text-decoration: none;
+    transition:.3s ease;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        opacity: .5;
+        color: gray;
+    }
+
+ /*    @include tablet {
+        width: auto;
+        display: inline-block;
+    } */
+}
+
+@mixin bg($url){
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin bgImage($url) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url( $url );
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin headingBorder( $colorText, $colorLine ) {
+    font-size: 3.6rem;
+    display: inline-block;
+    margin-top: 5rem;
+    color: $colorText;
+    @include tablet { 
+        margin-top: 0;
+    }
+    
+    &::after {
+        content: '';
+        background-color: $colorLine;
+        height: 1rem;
+        width: calc( 100% + 1rem);
+        display: block;
+        margin: -1.4rem 0 0 0;
+    }
+}
+
+@mixin scrollHorizontal {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
+    > * {
+        scroll-snap-align: center;
+    }
+}
+
+@mixin heading($salto: false) {
+    font-weight: 400;
+
+    span {
+        font-weight: 700;
+        @if($salto) {
+            display: block;
+        }
+        
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        height: 1rem;
+        width: 15rem;
+        margin-top: 1rem;
+        background-image: linear-gradient( to right, v.$primary 0%, v.$primary 50%, lighten(v.$primary, 20%) 50%, lighten(v.$primary, 20%) 100% );
+    }
+}

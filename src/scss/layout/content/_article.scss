@@ -1,0 +1,25 @@
+@use '../../base/mixins' as m;
+@use '../../base/variables' as v;
+
+.article{
+    margin-top: 2rem;
+    background-color: v.$white;
+    padding: 2rem;
+    -webkit-box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    box-shadow: 4px 3px 32px -7px rgba(0,0,0,0.75);
+    border-radius: 0.5rem;
+    &__title{
+        text-transform: capitalize;
+        @include m.heading
+    }
+    &__author{
+        color: rgb(101, 142, 155);
+        span{
+            font-weight: bold;
+        }
+    }
+    &__content{
+        line-height: 1.6;
+    }
+}
